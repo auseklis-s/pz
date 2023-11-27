@@ -5,7 +5,8 @@ K=1
 if type(N)==int and N>0:
     while K**2 <= N:
         K +=1
-        print(K)    
+    K-=1
+    print(K)
 else:
     print("Введите число!!!")
     
