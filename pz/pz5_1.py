@@ -1,3 +1,6 @@
+# С помощью функций получить вертикальную и горизонтальную линии. Линия
+# проводится многократной печатью символа. Заключить слово в рамку из
+# полученных линий.
 def create_horizontal_line(length, symbol):
     return symbol * length
 
@@ -14,7 +17,7 @@ word = "как дела?"
 symbol_lines = "="
 
 horizontal_line = create_horizontal_line(len(word) + 5, symbol_lines)
-vertical_line = create_vertical_line(1, symbol_lines)
+vertical_line = create_vertical_line(2, symbol_lines)
 
 framed_word = create_frame(word, horizontal_line, vertical_line)
 print(framed_word)
