@@ -20,20 +20,52 @@ for i in a:
         c.append(i)
 
 with open('pz11/file1.txt', 'w') as file:
-    file.write('четные элементы:\n')
-    file.write(str(b) + '\n')
+    for i in b:
+        file.write(str(i))
+        file.write(' ')
+   
+    
+   
+
+with open('pz11/file2.txt', 'w') as file:
+    for i in c:
+        file.write(str(i))
+        file.write(' ')
+    
+    
+
+
+file_1 = open('pz11/file1.txt', 'r')
+file_1 = file_1.read()
+file_1 = file_1.split()
+b = []
+for i in file_1:
+    b.append(int(i))
+
+
+file_2 = open('pz11/file2.txt', 'r')
+file_2 = file_2.read()
+file_2 = file_2.split()
+c = []
+for i in file_2:
+    c.append(int(i))
+
+with open('pz11/file_final.txt', 'w', encoding='utf-8') as file:
     file.write('произведение четных елментов:\n')
+    file.write(str(b)+ '\n')
+    file.write('четные элементы:\n')
     b1 = 1
     for y in b:
         b1 *= y
     file.write(str(b1)+ '\n')
     file.write('минимальный элемент:\n')
     file.write(str(min(b))) 
-
-with open('pz11/file2.txt', 'w') as file:
+    
+    
     file.write('нечетные элементы:\n')
-    file.write(str(c) + '\n')
+    file.write(str(c)+ '\n')
     file.write('количество нечетные элементы:\n')
     file.write(str(len(c)) + '\n')
     file.write('сумма нечетные элементы:\n')
     file.write(str(sum(c)) + '\n')
+    
