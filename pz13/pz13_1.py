@@ -1,9 +1,14 @@
 #В матрице найти максимальный положительный элемент, кратный 4.
-arr = [[1, 4, 5],[8, 2, 5],[3, 9, 16]]
-num = []
-for rov in arr:
-    for q in rov:
-        if q % 4 == 0:
-            num.append(q)
+import random
+arr = [[random.randint(1,10) for i in range(3)] for i in range(3)]
 
-print('максмальный положительный эллемен кратный 4:',max(num))
+print('изначальная матрица:')
+for i in arr:
+    print(i)
+
+matrix = [element for row in arr for element in row]
+
+man = filter(lambda x: x %  4== 0 and x > 0, matrix)
+
+
+print('максмальный положительный эллемен кратный 4:',max(man))

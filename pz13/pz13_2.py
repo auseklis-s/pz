@@ -1,10 +1,13 @@
 # В квадратной матрице все элементы, не лежащие на главной диагонали увеличить в
 # 2 раза.
-arr = [[1, 4, 5],[8, 2, 5],[3, 9, 16]]
-print(f'изначальная матрица: \n {arr}')
-for i in range(len(arr)):
-    for y in range(len(arr[i])):
-        if i != y:
-            arr[i][y] *= 2
+import random
+arr = [[random.randint(1,10) for i in range(3)] for i in range(3)]
+print(f'изначальная матрица: ')
+for i in arr:
+    print(i)
 
-print(f'увеличенная: \n {arr}')
+matrix = [[val * 2 if i != j else val for j, val in enumerate(row)] for i, row in enumerate(arr)]
+
+print(f'увеличенная: ')
+for i in matrix:
+    print(i)
