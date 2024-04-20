@@ -7,8 +7,7 @@ with open ('pz14/ip_address.txt' , 'r') as file1, open('pz14/output_file1.txt' ,
     for i in file1:
         if re.match(r'\d{1,3}\.\d{1,3}', i):
             test = i.strip().split('.')
-            print(test)
-            if int(test[0])>0 or int(test[1])>0:
+            if int(test[0])>0 and int(test[1])>0:
                 file2.write(i)
                 count1 += 1
             else:
