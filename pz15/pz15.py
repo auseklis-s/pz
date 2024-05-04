@@ -17,8 +17,9 @@ conn.commit()
 
 while True:
     print("1. Добавить клиента")
-    print("2. Показать список клиентов")
-    print("3. Выйти")
+    print("2. Удалить клиента")
+    print("3. Показать список клиентов")
+    print("4. Выйти")
     choice = input("Выберите действие: ")
 
     if choice == '1':
@@ -34,12 +35,18 @@ while True:
         print("Клиент добавлен!")
 
     elif choice == '2':
+        clin = input('Какого клиента хотите удалить ?')        
+        cur.execute('''DELETE from Clients where id = ?''', (clin,))
+        conn.commit()
+
+
+    elif choice == '3':
         cur.execute("SELECT * FROM Clients")
         clients = cur.fetchall()
         for client in clients:
             print(f"{client[0]} : {client[1]} - {client[2]} - {client[3]} - {client[4]} - {client[5]}")
 
-    elif choice == '3':
+    elif choice == '4':
         conn.close()
         break
 
