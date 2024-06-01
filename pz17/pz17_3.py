@@ -17,10 +17,10 @@
 # вложенных подкаталогов выводить не нужно.
 
 import os
-
-print("Пункт 1")
 print('-' * 100)
-os.chdir("../pz11")  
+print("Пункт 1")
+
+os.chdir("./pz11")  
 files = [] 
 
 
@@ -39,25 +39,25 @@ print(files)
 # Файл из ПЗ7 переименовать в test.txt. Вывести в консоль информацию о размере
 # файлов в папке test.
 
-
-print("Пункт 2")
 print('-' * 100)
+print("Пункт 2")
+
 
 os.chdir("..") 
 os.mkdir("test")  # создаем папку test
 os.mkdir("test/test1")  # создаем папку test1 внутри папки test
 
 # копируем файлы из ПЗ6 в папку test
-with open("./PZ6/pz6_ivahnenko.pdf", "rb") as src_file:
-    with open("test/pz6_ivahnenko.pdf", "wb") as dst_file:
+with open("./pz6/pz6.pdf", "rb") as src_file:
+    with open("test/pz6.pdf", "wb") as dst_file:
         dst_file.write(src_file.read())
 
-with open("./PZ6/pz6_ivahnenko.py", "r", encoding="utf-8") as src_file:
-    with open("test/pz6_ivahnenko.py", "w", encoding="utf-8") as dst_file:
+with open("./pz6/pz6_1.py", "r", encoding="utf-8") as src_file:
+    with open("test/pz6_1.py", "w", encoding="utf-8") as dst_file:
         dst_file.write(src_file.read())
 
 # копируем файл из ПЗ7 в папку test1 и переименовываем его в test.txt
-with open("./PZ7/pz7_ivahnenko.py", "r", encoding="utf-8") as src_file:
+with open("./pz7/pz7_1.py", "r", encoding="utf-8") as src_file:
     with open("test/test1/test.txt", "w", encoding="utf-8") as dst_file:
         dst_file.write(src_file.read())
 
@@ -74,13 +74,13 @@ print(sizes)
 
 #  перейти в папку с PZ11, найти там файл с самым коротким именем, имя вывести в
 # консоль. Использовать функцию basename () (os.path.basename()).
-
-print("Пункт 3")
 print('-' * 100)
 
+print("Пункт 3")
 
 
-os.chdir("../PZ11")
+
+os.chdir("./pz11")
 
 shortest_filename = ""
 for filename in os.listdir():
@@ -91,14 +91,14 @@ print(os.path.basename(shortest_filename))
 
 
 
-
-print("Пункт 4")
 print('-' * 100)
+print("Пункт 4")
 
 
-pdf_folder = '../PZ2'
 
-pdf_filename = 'ПР2 ивахненко.pdf'
+pdf_folder = './pz2'
+
+pdf_filename = 'pz2.pdf'
 
 pdf_path = os.path.join(pdf_folder, pdf_filename)
 
@@ -111,9 +111,9 @@ else:
 
 
 
-
-print("Пункт 5")
 print('-' * 100)
+print("Пункт 5")
+
 
 os.chdir = '../test/test1'
 
@@ -125,3 +125,5 @@ if os.path.isfile(file_path):
     print('Файл успешно удален.')
 else:
     print('Файл не найден.')
+
+print('-' * 100)
